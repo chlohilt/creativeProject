@@ -3,7 +3,7 @@
 <html>
   <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="./styles.css">
   <title>BYU DEBATE CLUB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
@@ -20,16 +20,16 @@
   <div class="navbar-collapse collapse show" id="navbarNav" style="background-color: #150a79;">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/index.html">Home</a>
+        <a class="nav-link" href="./index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/activities.html">Activities</a>
+        <a class="nav-link" href="./activities.html">Activities</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about.html">About</a>
+        <a class="nav-link" href="./about.html">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact.html">Contact</a>
+        <a class="nav-link" href="./contact.html">Contact</a>
       </li>
     </ul>
   </div>
@@ -37,11 +37,30 @@
 <div class = "aboutContainer">
   <div class = "aboutBox">
     <div class = "aboutPhoto">
-      <img src = "/sofiaPizza.JPG">
+      <img src = "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg">
     </div>
     <p>This is our favorite officer, Sofia Maia. She is a freshman studying neuroscience and she's amazing at debate!</p>
   </div>
 </div>
+<script>
+const axios = require("axios");
+
+  const options = {
+    method: 'GET',
+    url: 'https://instagram85.p.rapidapi.com/account/byu_speech/info',
+    headers: {
+      'X-Access-Token': '74dcfff6b4msh747f96fadfabbf7p125a74jsn3a3e827cbe16',
+      'X-RapidAPI-Host': 'instagram85.p.rapidapi.com',
+      'X-RapidAPI-Key': '911615e8f3mshfa2710d7c7f0de6p16d9bejsneae60a7bbe8a'
+    }
+  };
+  
+  axios.request(options).then(function (response) {
+    console.log("Follow us at " + response.data.username + ". As our bio says, this is the " + response.data.biography);
+  }).catch(function (error) {
+    console.error(error);
+  });
+  </script>
 <div class="footer">
   <a class="githubLink " href="https://github.com/chlohilt/creativeProject">Github link</a>
 </div>
